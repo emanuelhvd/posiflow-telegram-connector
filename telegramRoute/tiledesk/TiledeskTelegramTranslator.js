@@ -88,31 +88,50 @@ class TiledeskTelegramTranslator {
           // This makes button clicks appear in chat history
 
           let keyboard_buttons = [];
+          let keyboard_row = [];
+          const BUTTONS_PER_ROW = 2;  // 2 buttons per row
 
           // Loop on buttons - process only 'text' and 'action' types for Reply Keyboard
           for (let btn of buttons) {
 
+            let button_obj = null;
+
             if (btn.type == 'text') {
               // Reply keyboard uses simple text buttons
-              // Each button in its own row (vertical layout)
-              keyboard_buttons.push([{ text: btn.value }]);
+              button_obj = { text: btn.value };
             }
 
             if (btn.type == 'action') {
               // Action buttons also appear as text in Reply Keyboard
               // The action will be triggered by the text message
               let text_value = (btn.value.length > 36) ? btn.value.substr(0, 34) + '..' : btn.value;
-              keyboard_buttons.push([{ text: text_value }]);
+              button_obj = { text: text_value };
+            }
+
+            // Add button to current row
+            if (button_obj) {
+              keyboard_row.push(button_obj);
+
+              // When row has 2 buttons, push it to keyboard_buttons and start new row
+              if (keyboard_row.length === BUTTONS_PER_ROW) {
+                keyboard_buttons.push(keyboard_row);
+                keyboard_row = [];  // Reset for next row
+              }
             }
 
             // Note: URL buttons are not supported in Reply Keyboard
             // They would need to remain as inline_keyboard if needed
           }
 
+          // Add remaining buttons (if last row has less than 2 buttons)
+          if (keyboard_row.length > 0) {
+            keyboard_buttons.push(keyboard_row);
+          }
+
           telegram_message.text = tiledeskChannelMessage.text;
           if (keyboard_buttons.length > 0) {
             telegram_message.reply_markup = {
-              keyboard: keyboard_buttons,  // Each button in its own row
+              keyboard: keyboard_buttons,  // 2 buttons per row
               resize_keyboard: true,
               one_time_keyboard: true  // Keyboard disappears after selection
             }
