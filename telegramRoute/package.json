@@ -1,7 +1,7 @@
 {
-  "name": "@tiledesk/tiledesk-telegram-connector",
-  "version": "0.1.15",
-  "description": "Tiledesk Telegram connector",
+  "name": "posiflow-telegram-connector",
+  "version": "1.0.3",
+  "description": "Tiledesk Telegram Connector with Reply Keyboard support - Fork for Posiflow",
   "main": "index.js",
   "scripts": {
     "test": "mocha",

@@ -1,8 +1,8 @@
 {
-  "name": "tiledesk-telegram",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "tiledesk-telegram-connector-posiflow",
+  "version": "1.0.2",
+  "description": "Tiledesk Telegram Connector with Reply Keyboard support - Fork for Posiflow",
+  "main": "telegramRoute/index.js",
   "scripts": {
     "test": "mocha",
     "start": "node index.js"
@@ -11,8 +11,8 @@
     "node": "16.20.1",
     "npm": "8.15.0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tiledesk", "telegram", "chatbot", "connector", "reply-keyboard"],
+  "author": "Posiflow",
   "license": "ISC",
   "dependencies": {
     "@tiledesk/tiledesk-client": "^0.10.10",

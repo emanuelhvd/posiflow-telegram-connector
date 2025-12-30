@@ -1,0 +1,329 @@
+[
+    {
+        "senderFullname": "Emanuel Henrique",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7a7c",
+        "sender": "telegram-5810141753",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "ola",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "telegram-5810141753",
+        "channel": {
+            "name": "telegram"
+        },
+        "createdAt": "2025-12-26T13:42:13.027Z",
+        "updatedAt": "2025-12-26T13:42:13.716Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "System",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7a91",
+        "sender": "system",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "Group created",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "system",
+        "attributes": {
+            "subtype": "info",
+            "updateconversation": true,
+            "messagelabel": {
+                "key": "GROUP_CREATED",
+                "parameters": {
+                    "creator": "100-APIADMIN"
+                }
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:13.369Z",
+        "updatedAt": "2025-12-26T13:42:13.369Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "System",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7a9e",
+        "sender": "system",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "bot_691e1c78f9abe9001357555e joined group on creation",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "system",
+        "attributes": {
+            "subtype": "info",
+            "updateconversation": true,
+            "messagelabel": {
+                "key": "MEMBER_JOINED_GROUP",
+                "parameters": {
+                    "member_id": "bot_691e1c78f9abe9001357555e",
+                    "fullname": "bot_691e1c78f9abe9001357555e",
+                    "firstname": "",
+                    "lastname": ""
+                }
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:13.476Z",
+        "updatedAt": "2025-12-26T13:42:13.476Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "System",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7ab9",
+        "sender": "system",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "system joined group on creation",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "system",
+        "attributes": {
+            "subtype": "info",
+            "updateconversation": true,
+            "messagelabel": {
+                "key": "MEMBER_JOINED_GROUP",
+                "parameters": {
+                    "member_id": "system",
+                    "fullname": "system",
+                    "firstname": "",
+                    "lastname": ""
+                }
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:13.719Z",
+        "updatedAt": "2025-12-26T13:42:13.719Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "System",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7aba",
+        "sender": "system",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "telegram-5810141753 joined group on creation",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "system",
+        "attributes": {
+            "subtype": "info",
+            "updateconversation": true,
+            "messagelabel": {
+                "key": "MEMBER_JOINED_GROUP",
+                "parameters": {
+                    "member_id": "telegram-5810141753",
+                    "fullname": "telegram-5810141753",
+                    "firstname": "",
+                    "lastname": ""
+                }
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:13.719Z",
+        "updatedAt": "2025-12-26T13:42:13.719Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "Estella",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90b574455b00130a7ac4",
+        "sender": "691e1c78f9abe9001357555e",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "Olá, bom dia! Eu sou a Estella, Analista Virtual do **Intuitive Service Desk** da **Positivo S+**!\nEstou aqui para esclarecer dúvidas e prestar suporte técnico.\n\nPara iniciar o serviço, por favor, autentique-se usando o link abaixo:\nhttps://api-middleware-dev.posiflow.positivosmais.com/microsoft/oauth2/service/support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753/691e07589a5b4700130cbed8 👈\n\nSe você não conseguir autenticar e deseja **redefinir senha** ou **desbloqueio de usuário**, clique em:\n**#reset** ou **#desbloqueio**\n\nsupport-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "691e1c78f9abe9001357555e",
+        "attributes": {
+            "disableInputMessage": false,
+            "commands": [
+                {
+                    "type": "wait",
+                    "time": 500
+                },
+                {
+                    "type": "message",
+                    "message": {
+                        "type": "text",
+                        "text": "Olá, bom dia! Eu sou a Estella, Analista Virtual do **Intuitive Service Desk** da **Positivo S+**!\nEstou aqui para esclarecer dúvidas e prestar suporte técnico.\n\nPara iniciar o serviço, por favor, autentique-se usando o link abaixo:\nhttps://api-middleware-dev.posiflow.positivosmais.com/microsoft/oauth2/service/support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753/691e07589a5b4700130cbed8 👈\n\nSe você não conseguir autenticar e deseja **redefinir senha** ou **desbloqueio de usuário**, clique em:\n**#reset** ou **#desbloqueio**\n\nsupport-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+                        "attributes": {
+                            "attachment": {
+                                "type": "template",
+                                "buttons": [
+                                    {
+                                        "uid": "a7f11da8f9294c4da634244100cb4cf6",
+                                        "type": "action",
+                                        "value": "#reset",
+                                        "link": "",
+                                        "target": "blank",
+                                        "action": "#9a95dcb6-3d1f-49a7-845b-6d8f0bf51749",
+                                        "show_echo": true,
+                                        "alias": ""
+                                    },
+                                    {
+                                        "uid": "fda859c1a8004a208d932fc677a8a318",
+                                        "type": "action",
+                                        "value": "#desbloqueio",
+                                        "link": "",
+                                        "target": "blank",
+                                        "action": "#d593c53e-feb9-4e5d-970d-3b4fa275ce24",
+                                        "attributes": "",
+                                        "show_echo": true,
+                                        "alias": ""
+                                    },
+                                    {
+                                        "uid": "5d1f9751bc194059bd434730248ae78a",
+                                        "type": "action",
+                                        "value": "Teste do botao",
+                                        "link": "",
+                                        "target": "blank",
+                                        "action": "#abff1025-a9aa-41d9-936e-d76f7618040f",
+                                        "attributes": "",
+                                        "show_echo": true,
+                                        "alias": ""
+                                    }
+                                ],
+                                "json_buttons": "",
+                                "json_gallery": ""
+                            }
+                        }
+                    }
+                }
+            ],
+            "fillParams": true,
+            "intentName": "MSG_WELCOME",
+            "flowAttributes": {
+                "chatbot_id": "694e90b274455b00130a79ef",
+                "api_base_url": "https://demo.posiflow.positivosmais.com/api",
+                "userEmail": "na@telegram.com",
+                "userFullname": "Emanuel Henrique",
+                "usuario_autenticado": "Não",
+                "now": "2025-12-26T13:42:13.794Z",
+                "UUID": "3d591ea116bc40f8abdb7d16c7f7a74b",
+                "UUIDv4": "9dfa48da-f4d4-46a5-936a-68259e70339b"
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:13.830Z",
+        "updatedAt": "2025-12-26T13:42:13.974Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "Emanuel Henrique",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90be74455b00130a7b14",
+        "sender": "telegram-5810141753",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": " ",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "telegram-5810141753",
+        "attributes": {
+            "action": "#abff1025-a9aa-41d9-936e-d76f7618040f",
+            "subtype": "info"
+        },
+        "channel": {
+            "name": "telegram"
+        },
+        "createdAt": "2025-12-26T13:42:22.311Z",
+        "updatedAt": "2025-12-26T13:42:22.402Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "Estella",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90be74455b00130a7b23",
+        "sender": "691e1c78f9abe9001357555e",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "Botao clicado",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "691e1c78f9abe9001357555e",
+        "attributes": {
+            "disableInputMessage": false,
+            "commands": [
+                {
+                    "type": "wait",
+                    "time": 500
+                },
+                {
+                    "type": "message",
+                    "message": {
+                        "type": "text",
+                        "text": "Botao clicado",
+                        "attributes": {
+                            "attachment": {
+                                "type": "template",
+                                "buttons": [],
+                                "json_buttons": "",
+                                "json_gallery": ""
+                            }
+                        }
+                    }
+                }
+            ],
+            "fillParams": true,
+            "intentName": "untitled_block_1",
+            "flowAttributes": {
+                "chatbot_id": "694e90b274455b00130a79ef",
+                "api_base_url": "https://demo.posiflow.positivosmais.com/api",
+                "userEmail": "na@telegram.com",
+                "userFullname": "Emanuel Henrique",
+                "usuario_autenticado": "Não",
+                "now": "2025-12-26T13:42:22.395Z",
+                "UUID": "bdbf5898733c45658298ea2e9d8bd5b1",
+                "UUIDv4": "6cd328dd-3af3-4f53-8481-92c44cc0609f"
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:22.434Z",
+        "updatedAt": "2025-12-26T13:42:22.540Z",
+        "__v": 0
+    },
+    {
+        "senderFullname": "Bot",
+        "type": "text",
+        "channel_type": "group",
+        "status": 200,
+        "_id": "694e90bf74455b00130a7b66",
+        "sender": "system",
+        "recipient": "support-group-691e07589a5b4700130cbed8-f2ffc951-telegram-5810141753",
+        "text": "Chat closed",
+        "id_project": "691e07589a5b4700130cbed8",
+        "createdBy": "system",
+        "attributes": {
+            "subtype": "info/support",
+            "updateconversation": false,
+            "messagelabel": {
+                "key": "CHAT_CLOSED"
+            }
+        },
+        "channel": {
+            "name": "chat21"
+        },
+        "createdAt": "2025-12-26T13:42:23.067Z",
+        "updatedAt": "2025-12-26T13:42:23.157Z",
+        "__v": 0
+    }
+]

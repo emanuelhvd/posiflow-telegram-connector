@@ -1,0 +1,14 @@
+# Exclude root files - only publish telegramRoute
+index.js
+.env
+.env.example
+.gitignore
+README.md
+resumo.md
+
+# Exclude development files
+node_modules/
+test/
+*.log
+.git/
+.vscode/

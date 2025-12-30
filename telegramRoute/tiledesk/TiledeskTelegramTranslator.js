@@ -84,49 +84,37 @@ class TiledeskTelegramTranslator {
 
           let buttons = tiledeskChannelMessage.attributes.attachment.buttons;
 
-          // Issue: quick_replies and inline_buttons not supported togheter
-          // Solution 1: create only inline_buttons 
-          // Solution 2: send a message for type
+          // Using Reply Keyboard instead of Inline Keyboard
+          // This makes button clicks appear in chat history
 
-          let quick_replies = [];   // not used at the moment
-          let inline_buttons = [];
+          let keyboard_buttons = [];
 
-          // Loop on buttons
+          // Loop on buttons - process only 'text' and 'action' types for Reply Keyboard
           for (let btn of buttons) {
 
-            if (btn.type == 'url') {
-              inline_buttons.push([{ text: btn.value, url: btn.link }])
+            if (btn.type == 'text') {
+              // Reply keyboard uses simple text buttons
+              // Each button in its own row (vertical layout)
+              keyboard_buttons.push([{ text: btn.value }]);
             }
 
             if (btn.type == 'action') {
+              // Action buttons also appear as text in Reply Keyboard
+              // The action will be triggered by the text message
               let text_value = (btn.value.length > 36) ? btn.value.substr(0, 34) + '..' : btn.value;
-              //let cb_value = (btn.value.length > 36) ? btn.value.substr(0, 36) : btn.value;
-
-              let action_btn = {
-                t: btn.type.substring(0, 1),
-                action: btn.action
-              }
-              inline_buttons.push([{ text: text_value, callback_data: JSON.stringify(action_btn) }])
+              keyboard_buttons.push([{ text: text_value }]);
             }
 
-            if (btn.type == 'text') {
-
-              let text_value = (btn.value.length > 38) ? btn.value.substr(0, 36) + '..' : btn.value;
-              let cb_value = (btn.value.length > 38) ? btn.value.substr(0, 38) : btn.value;
-              let text_btn = {
-                t: btn.type.substring(0, 1),
-                value: cb_value
-              }
-              inline_buttons.push([{ text: text_value, callback_data: JSON.stringify(text_btn) }])
-            }
+            // Note: URL buttons are not supported in Reply Keyboard
+            // They would need to remain as inline_keyboard if needed
           }
 
           telegram_message.text = tiledeskChannelMessage.text;
-          if (inline_buttons.length > 0) {
+          if (keyboard_buttons.length > 0) {
             telegram_message.reply_markup = {
-              inline_keyboard: inline_buttons,
+              keyboard: keyboard_buttons,  // Each button in its own row
               resize_keyboard: true,
-              one_time_keyboard: false
+              one_time_keyboard: true  // Keyboard disappears after selection
             }
           }
 
@@ -193,36 +181,9 @@ class TiledeskTelegramTranslator {
 
   async toTiledesk(telegramChannelMessage, telegram_token, media_url) {
 
-    if (telegramChannelMessage.callback_query) {
-      // callback query
-      let callback = telegramChannelMessage.callback_query;
-      let data = JSON.parse(callback.data)
+    // Reply Keyboard sends regular messages, no callback_query handling needed
 
-      if (data.t === 'a') {
-        var tiledeskMessage = {
-          senderFullname: callback.from.first_name + " " + callback.from.last_name,
-          text: ' ',
-          type: 'text',
-          attributes: {
-            action: data.action,
-            subtype: 'info'
-          },
-          channel: { name: TiledeskTelegramTranslator.CHANNEL_NAME }
-        }
-        return tiledeskMessage;
-
-      } else {
-        var tiledeskMessage = {
-          text: data.value,
-          senderFullname: callback.from.first_name + " " + callback.from.last_name,
-          channel: { name: TiledeskTelegramTranslator.CHANNEL_NAME }
-        }
-        return tiledeskMessage;
-      }
-
-
-    }
-    else if (telegramChannelMessage.message) {
+    if (telegramChannelMessage.message) {
 
       let message = telegramChannelMessage.message;
 

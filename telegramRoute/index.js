@@ -615,8 +615,8 @@ router.post('/telegram', async (req, res) => {
 
   let projectId = req.query.project_id;
 
-  if (!req.body.message && !req.body.callback_query) {
-    winston.verbose("(tgm) Message or callback query undefined");
+  if (!req.body.message) {
+    winston.verbose("(tgm) Message undefined");
     return res.send({ message: "Message not sent" });
   }
 
@@ -639,19 +639,8 @@ router.post('/telegram', async (req, res) => {
 
   const ttClient = new TiledeskTelegram({ BASE_URL: BASE_URL, TELEGRAM_API_URL: TELEGRAM_API_URL, log: true });
 
-  if (telegramChannelMessage.callback_query) {
-    // Clear inline buttons
-    let reply_markup_data = {
-      chat_id: telegramChannelMessage.callback_query.message.chat.id,
-      message_id: telegramChannelMessage.callback_query.message.message_id,
-      reply_markup: {
-        inline_keyboard: []
-      }
-    }
-
-    let response = ttClient.editMessageReplyMarkup(settings.telegram_token, reply_markup_data);
-    winston.debug("(tgm) Edit message markup response: ", response.data);
-  }
+  // Reply Keyboard removes itself automatically with one_time_keyboard: true
+  // No need to manually clear buttons
 
   const tlr = new TiledeskTelegramTranslator();
   let tiledeskJsonMessage;
