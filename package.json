@@ -1,6 +1,6 @@
 {
   "name": "tiledesk-telegram-connector-posiflow",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Tiledesk Telegram Connector with Reply Keyboard support - Fork for Posiflow",
   "main": "telegramRoute/index.js",
   "scripts": {

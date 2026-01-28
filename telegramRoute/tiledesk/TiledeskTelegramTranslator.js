@@ -29,6 +29,8 @@ class TiledeskTelegramTranslator {
     let text = '';
     if (tiledeskChannelMessage.text) {
       text = tiledeskChannelMessage.text;
+      // Convert markdown bold from ** to * for Telegram compatibility
+      text = text.replace(/\*\*(.+?)\*\*/g, '*$1*');
     }
 
     const telegram_message = {
@@ -128,7 +130,7 @@ class TiledeskTelegramTranslator {
             keyboard_buttons.push(keyboard_row);
           }
 
-          telegram_message.text = tiledeskChannelMessage.text;
+          telegram_message.text = text;
           if (keyboard_buttons.length > 0) {
             telegram_message.reply_markup = {
               keyboard: keyboard_buttons,  // 2 buttons per row
@@ -184,13 +186,13 @@ class TiledeskTelegramTranslator {
         }
 
       } else {
-        telegram_message.text = tiledeskChannelMessage.text;
+        telegram_message.text = text;
         return telegram_message;
       }
     }
 
     else {
-      telegram_message.text = tiledeskChannelMessage.text;
+      telegram_message.text = text;
       return telegram_message;
     }
 
