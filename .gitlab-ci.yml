@@ -1,0 +1,72 @@
+# ================================================================
+# GitLab CI/CD Pipeline - Posiflow Telegram Connector
+# Publish NPM Package + Update Server
+# ================================================================
+
+stages:
+  - test
+  - publish
+
+variables:
+  GIT_SUBMODULE_STRATEGY: none
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+    - telegramRoute/node_modules/
+
+# ================================================================
+# STAGE 1: Validação
+# ================================================================
+test:lint:
+  stage: test
+  image: node:18-alpine
+  tags:
+    - docker
+  script:
+    - echo "Validação de estrutura"
+    - test -f telegramRoute/package.json || exit 1
+    - test -f telegramRoute/index.js || exit 1
+    - echo "Arquivos necessários encontrados"
+  only:
+    - master
+    - develop
+
+# ================================================================
+# STAGE 2: Publish NPM Package
+# ================================================================
+publish:npm:
+  stage: publish
+  image: node:18-alpine
+  tags:
+    - docker
+
+  before_script:
+    - echo "Configurando NPM..."
+    - cd telegramRoute
+    - npm ci --prefer-offline --no-audit
+
+  script:
+    - echo "Incrementando versão do pacote..."
+    - npm version patch -m "Bump version to %s [skip ci]"
+
+    - echo "Versão atual:"
+    - node -p "require('./package.json').version"
+
+    - echo "Configurando autenticação NPM..."
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+    - echo "Publicando pacote no NPM..."
+    - npm publish --access public
+
+    - echo "Pacote publicado com sucesso!"
+    - echo "Versão: $(node -p \"require('./package.json').version\")"
+    - echo "NPM: https://www.npmjs.com/package/posiflow-telegram-connector"
+
+  after_script:
+    - rm -f ~/.npmrc
+
+  only:
+    - master
